@@ -64,6 +64,7 @@
     <Compile Include="Assets\CreateBuilding.cs" />
     <Compile Include="Assets\PlayerCam.cs" />
     <Compile Include="Assets\movement.cs" />
+    <Compile Include="Assets\CreateSpawnner.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
