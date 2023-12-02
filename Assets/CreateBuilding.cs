@@ -8,6 +8,7 @@ public class CreateBuilding : MonoBehaviour
     public int height = 0;
     public int minHeight = 1;
     public int maxHeight = 10;
+    public int buffer = 0;
     public GameObject objectToCreate;
     public GameObject spawnner;
     public System.Random ran = new System.Random();
@@ -16,6 +17,7 @@ public class CreateBuilding : MonoBehaviour
     {
         height = ran.Next(minHeight, maxHeight);
         Vector3 position = spawnner.transform.position;
+        position.y += buffer;
         for (int i = 0; i < height; i++)
         {
             Instantiate(objectToCreate, position, Quaternion.identity);
