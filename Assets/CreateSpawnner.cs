@@ -30,6 +30,7 @@ public class CreateSpawnner : MonoBehaviour
             position.x += gap;
             position.z = z;
             print("Changed X: " + position.x);
+            Destroy(this.gameObject);
         }
     }
 }
