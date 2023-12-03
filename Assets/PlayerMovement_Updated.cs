@@ -9,9 +9,17 @@ public class PlayerMovement_Updated : MonoBehaviour
 
     [Header("Movement")]
     public float moveSpeed;
-
+    public float swingSpeed; 
     public float groundDrag;
 
+    public MovementState state;
+
+    public enum MovementState
+    {
+        swinging
+    }
+
+    public bool swinging; 
 
     //Variables for mechanic 
     public float jumpForce;
@@ -44,6 +52,8 @@ public class PlayerMovement_Updated : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+
+        readyToJump = true; 
     }
 
    
@@ -99,7 +109,7 @@ public class PlayerMovement_Updated : MonoBehaviour
         // only apply when on ground
         if (grounded)
         {
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force); //so player doesn't fall through ground 
 
             // only apply when jumping
         } else if (!grounded)

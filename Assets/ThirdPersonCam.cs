@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,11 +26,20 @@ public class ThirdPersonCam : MonoBehaviour
     {
         //rotate orientation 
         Vector3 viewDir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
+        print(viewDir.normalized); 
         orientation.forward = viewDir.normalized;
+        if(viewDir.x < 0)
+        {
+            print("negative"); 
+        }
 
         //rotate player object
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
+        if(viewDir.x < 0)
+        {
+            horizontalInput = -horizontalInput;
+        }
         Vector3 inputDir = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
         if(inputDir != Vector3.zero)

@@ -359,6 +359,8 @@
 "Assets/movement.cs"
 "Assets/PlayerCam.cs"
 "Assets/PlayerMovement_Updated.cs"
+"Assets/RandomObjectSpawner.cs"
+"Assets/Swinging.cs"
 "Assets/ThirdPersonCam.cs"
 -langversion:9.0
 

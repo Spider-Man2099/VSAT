@@ -61,7 +61,9 @@
     <Compile Include="Assets\PlayerMovement_Updated.cs" />
     <Compile Include="Assets\ThirdPersonCam.cs" />
     <Compile Include="Assets\MoveCamera.cs" />
+    <Compile Include="Assets\Swinging.cs" />
     <Compile Include="Assets\CameraFollow.cs" />
+    <Compile Include="Assets\RandomObjectSpawner.cs" />
     <Compile Include="Assets\PlayerCam.cs" />
     <Compile Include="Assets\movement.cs" />
   </ItemGroup>
