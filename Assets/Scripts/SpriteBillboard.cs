@@ -22,3 +22,6 @@ public class SpriteBillboard : MonoBehaviour
         print("Rotation is working "+ Camera.current.transform.rotation.eulerAngles.y);
     }
 }
+//find normal of plane and follow cam
+//cross() gets norma;
+//or plane look at camera/ point
