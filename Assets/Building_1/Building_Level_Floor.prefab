@@ -53,8 +53,8 @@ MonoBehaviour:
   height: 0
   minHeight: 1
   maxHeight: 10
-  objectToCreate: {fileID: 0}
-  spawnner: {fileID: 0}
+  objectToCreate: {fileID: 376061034716306042, guid: 9e42493badd94cf4d9d087f0efa1fc2e, type: 3}
+  spawnner: {fileID: 3313502166343191839}
 --- !u!114 &-8693194507534285689
 MonoBehaviour:
   m_ObjectHideFlags: 0

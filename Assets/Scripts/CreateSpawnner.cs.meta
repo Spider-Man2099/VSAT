@@ -3,7 +3,10 @@ guid: be2e83657bf9a6d4b85c1aaa9f6ee123
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - objectToCreate: {fileID: 8834644281736838962, guid: 9e716d55edcf0894384697d6ae5fbfd5, type: 3}
+  - objectToCreate2: {fileID: 8834644281736838962, guid: 9e716d55edcf0894384697d6ae5fbfd5, type: 3}
+  - spawnner: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
