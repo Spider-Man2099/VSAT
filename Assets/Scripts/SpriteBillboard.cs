@@ -6,6 +6,7 @@ public class SpriteBillboard : MonoBehaviour
 {
     [SerializeField] bool freezeXZAxis = true;
     //public System.Random ran = new System.Random();
+    public GameObject player;
 
     // Update is called once per frame
     void Update()
@@ -16,7 +17,8 @@ public class SpriteBillboard : MonoBehaviour
         }
         else
         {
-            transform.rotation = Camera.current.transform.rotation;
+            transform.LookAt(player.transform);
+            //transform.rotation = Camera.current.transform.rotation;
             //transform.rotation = Quaternion.Euler(ran.Next(0, 90), 90f, 0f);
         }
         print("Rotation is working "+ Camera.current.transform.rotation.eulerAngles.y);
