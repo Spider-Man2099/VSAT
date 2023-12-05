@@ -104,18 +104,29 @@ public class PlayerMovement_Updated : MonoBehaviour
     {
 
         //calculate movement direction i.e. always walk in the direction the player is looking 
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+     //   moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
+        Vector3 move = new Vector3(horizontalInput, 0f, verticalInput);
+        move = Camera.main.transform.TransformDirection(move);
+        move = Vector3.ProjectOnPlane(move, Vector3.up);
+
+        Vector3 camDir = Camera.main.transform.forward;
+        camDir = Vector3.ProjectOnPlane(camDir, Vector3.up);
+
+        // moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
         // only apply when on ground
         if (grounded)
         {
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force); //so player doesn't fall through ground 
+            //used to say moveDirection instead of move 
+            rb.AddForce(move.normalized * moveSpeed * 10f, ForceMode.Force); //so player doesn't fall through ground 
 
             // only apply when jumping
-        } else if (!grounded)
-        {
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
         }
+        else if (!grounded)
+        {
+            rb.AddForce(move.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+        }
+      
     }
 
     private void SpeedControl()
